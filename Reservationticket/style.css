@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+
+
+
+
+:root {
+    --primary-color: black;
+    --background-color: #fff;
+    --text-color: black;
+}
+
+body.Light-theme {
+    --primary-color: #fff;
+    --background-color: black;
+    --text-color: #fff;
+}
+
+
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    color: var(--background-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+nav ul li a:hover {
+    color: #f3ff05;
+}
+
+.theme-switcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 90vh;
+    justify-content: center;
+}
+
+.toggle {
+    width: 30px;
+    height: 30px;
+    margin-left: 90%; 
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#toggle {
+    background-color: var(--background-color);
+    border: 2px solid #333;
+}
+
+
+.content {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section {
+    display: none;
+    background: var(--background-color);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.section.active {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input[type="text"],
+.form-group select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.radio-group {
+    display: flex;
+    gap: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+
+button {
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 0.5rem;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+footer {
+    padding: 2rem;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    margin-top: 2rem;
+}

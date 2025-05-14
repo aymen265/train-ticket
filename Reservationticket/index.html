@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>Gestion Reservations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <button class="toggle" id="toggle"></button>
+        <div class="moon-solidicon"></div>
+        <h1>Gestion Reservations</h1>
+        <p>Bienvenue dans notre système de gestion reservation</p>
+        <nav>
+            <ul>
+                <li><a id="showClients">Gestion des Clients</a></li>
+                <li><a id="showReservation">Réserver un ticket</a></li>
+                <li><a id="showTickets">Tickets réservés</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content">
+        <!-- CRUD Clients Section -->
+        <div id="clients" class="section active">
+            <h2>Gestion des Clients</h2>
+            <form id="clientForm">
+                <div class="form-group">
+                    <label>Nom Complet:</label>
+                    <input type="text" id="nomComplet" required>
+                </div>
+                <div class="form-group">
+                    <label>CIN:</label>
+                    <input type="text" id="cin" required>
+                </div>
+                <div class="form-group">
+                    <label>Etudiant:</label>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="estEtudiant" value="true" required> Oui
+                        </label>
+                        <label>
+                            <input type="radio" name="estEtudiant" value="false" required> Non
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" id="saveBtn">Ajouter</button>
+            </form>
+            <table id="clientsTable">
+                <thead>
+                    <tr>
+                        <th>Nom Complet</th>
+                        <th>CIN</th>
+                        <th>Etudiant</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <!-- Réservation Section -->
+        <div id="reservation" class="section">
+            <h2>Réserver un Ticket</h2>
+            <form id="reservationForm">
+                <div class="form-group">
+                    <label>Client:</label>
+                    <select id="clientSelect" required></select>
+                </div>
+                <div class="form-group">
+                    <label>Ville de Destination:</label>
+                    <select id="destination" required>
+                        <option value="rabat">Rabat - 40 DH</option>
+                        <option value="mohammedia">Mohammedia - 20 DH</option>
+                        <option value="marrakech">Marrakech - 150 DH</option>
+                        <option value="tanger">Tanger - 290 DH</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Classe:</label>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="classe" value="1" required> 1ère classe
+                        </label>
+                        <label>
+                            <input type="radio" name="classe" value="2" required> 2ème classe
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Etudiant:</label>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="estEtudiantTicket" value="true" disabled > Oui
+                        </label>
+                        <label>
+                            <input type="radio" name="estEtudiantTicket" value="false" disabled> Non
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Prix Total:</label>
+                    <span id="totalPrice">0 DH</span>
+                </div>
+                <button type="submit">Réserver</button>
+            </form>
+        </div>
+
+        <!-- Tickets Section -->
+        <div id="tickets" class="section">
+            <h2>Tickets Réservés</h2>
+            <table id="ticketsTable">
+                <thead>
+                    <tr>
+                        <th>Client</th>
+                        <th>Etudiant</th>
+                        <th>Destination</th>
+                        <th>Classe</th>
+                        <th>Prix</th>
+                        <th>Date de Réservation</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 OFPPT. Tous droits réservés.</p>
+    </footer>
+
+<script src="script.js"></script>
+</body>
+
+</html>
